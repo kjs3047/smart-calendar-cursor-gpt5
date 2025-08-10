@@ -1,0 +1,5 @@
+{
+  "/admin/categories/page": "app/admin/categories/page.js",
+  "/(dashboard)/calendar/page": "app/(dashboard)/calendar/page.js",
+  "/(dashboard)/tasks/page": "app/(dashboard)/tasks/page.js"
+}

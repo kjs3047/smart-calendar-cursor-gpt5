@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%; /* #0f172a */
+  --border: 210 20% 90%; /* #e5e7eb */
+  --input: 210 20% 90%;
+  --ring: 244 70% 55%; /* ~indigo */
+  --radius: 0.75rem; /* 12px */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  color: hsl(var(--foreground));
+}
+
+/* Minimal scrollbar */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 116, 139, 0.35);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Avoid transform on parent that breaks DnD positioning */
+.kanban-no-transform {
+  transform: none !important;
+}
+
+/* FullCalendar theming - modern, subtle */
+.fc .fc-toolbar-title {
+  @apply text-base font-semibold text-slate-800;
+}
+.fc .fc-button {
+  @apply rounded-md border border-slate-200 bg-white/80 px-3 py-1 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50;
+}
+.fc .fc-button:hover,
+.fc .fc-button:focus {
+  @apply text-slate-700;
+}
+.fc .fc-button:disabled {
+  @apply opacity-60;
+}
+.fc .fc-button-primary,
+.fc .fc-button.fc-today-button {
+  @apply bg-white/80 text-slate-700;
+}
+.fc .fc-button-primary:hover:not(.fc-button-active),
+.fc .fc-button.fc-today-button:hover:not(.fc-button-active) {
+  @apply bg-slate-50 text-slate-700;
+}
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  @apply bg-slate-900 text-white;
+}
+.fc .fc-button .fc-icon {
+  @apply text-slate-700;
+}
+.fc .fc-button:hover .fc-icon {
+  @apply text-slate-700;
+}
+.fc .fc-col-header-cell-cushion,
+.fc .fc-timegrid-axis-cushion {
+  @apply text-xs text-slate-500;
+}
+.fc .fc-daygrid-day-number {
+  @apply text-xs text-slate-500 no-underline;
+}
+.fc .fc-timegrid-slot-label {
+  @apply text-xs text-slate-500;
+}
+.fc .fc-view-harness {
+  transform: none !important;
+  filter: none !important;
+}
+.fc .fc-scrollgrid,
+.fc .fc-daygrid,
+.fc .fc-timegrid {
+  @apply rounded-xl border border-slate-200 bg-white/70;
+}
+.fc .fc-daygrid-event {
+  @apply bg-transparent border-0 p-0 text-[11px] text-slate-800 shadow-none;
+}
+.fc .fc-daygrid-event:hover {
+  @apply bg-transparent;
+}
+.fc .fc-timegrid-event {
+  background: transparent !important;
+  border-color: transparent !important;
+}
+.fc .fc-timegrid-event .fc-event-main {
+  @apply p-0;
+}
+
+/* Today highlight (month/week/day) */
+.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-frame {
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.45);
+  border-radius: 0.5rem;
+  background-color: rgba(99, 102, 241, 0.06);
+}
+.fc .fc-timegrid-col.fc-day-today .fc-timegrid-col-frame {
+  box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.45);
+  background-color: rgba(99, 102, 241, 0.04);
+  border-radius: 0.5rem;
+}
+.fc .fc-col-header-cell.fc-day-today .fc-col-header-cell-cushion {
+  @apply font-semibold;
+  color: #111827;
+}
+
+/* Responsive: hide quickAdd button on small screens */
+@media (max-width: 767px) {
+  .fc .fc-quickAdd-button {
+    display: none !important;
+  }
+}
+
+/* Add spacing between quickAdd and view buttons */
+.fc .fc-quickAdd-button {
+  margin-right: 1rem;
+}
+
+.container-app {
+  @apply mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-panel {
+  @apply rounded-xl border bg-white/80 backdrop-blur shadow-sm;
+}
+
+/* For components that misbehave with backdrop-filter (e.g., drag mirrors) */
+.no-backdrop {
+  backdrop-filter: none !important;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-90 active:opacity-100;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-lg bg-secondary px-3 py-2 text-sm font-medium text-white shadow-sm transition hover:opacity-90 active:opacity-100;
+}

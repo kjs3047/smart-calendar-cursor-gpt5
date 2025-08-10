@@ -1,0 +1,2 @@
+﻿# Dependencies`nnode_modules/`n`n# Next.js`n.next/`nout/`.vercel/`n`n# Build tools`n.turbo/`n`n# Logs`nnpm-debug.log*`nyarn-debug.log*`nyarn-error.log*`npnpm-debug.log*`n`n# Env`n.env`n.env.*`n!.env.example`n`n# OS/Editor`n.DS_Store`nThumbs.db`n*.swp`n.idea/`n.vscode/`n`n# Tests/artifacts`nplaywright-report/`ncoverage/
+node_modules
